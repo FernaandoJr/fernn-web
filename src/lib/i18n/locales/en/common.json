@@ -1,0 +1,150 @@
+{
+  "nav": {
+    "site": {
+      "name": "Site",
+      "features": "Features",
+      "commands": "Commands"
+    },
+    "legal": {
+      "name": "Legal",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy"
+    },
+    "project": {
+      "name": "Project",
+      "repo": "Bot repository"
+    }
+  },
+  "a11y": {
+    "toggleMenu": "Toggle menu",
+    "github": "fernn on GitHub",
+    "discordInvite": "Add fernn to your Discord server (opens Discord in a new tab)",
+    "heroHeightFull": "Switch to fit-to-content height",
+    "heroHeightFit": "Switch to full-height hero"
+  },
+  "home": {
+    "aboutTitle": "What is fernn?",
+    "aboutP1": "fernn is a Discord bot built with TypeScript and Bun, using discord.js v14. Everything runs through modern slash commands—no prefix spam, clear permissions, and straightforward moderation and utility tools for your community.",
+    "aboutP2": "Optional server logging stores only your log-channel settings in MongoDB (not a history archive); events show up as rich embeds in the channel you choose. Terms of Service and Privacy Policy stay linked from this site for transparency and the Developer Portal.",
+    "featuresTitle": "Why teams use fernn",
+    "commandsTitle": "Slash commands",
+    "commandsColCommand": "Command",
+    "commandsColDescription": "What it does",
+    "commandsFootnote": "/server-icon includes an add-image subcommand for updating the guild icon workflow from chat.",
+    "legalStripTitle": "Policies",
+    "legalStripDescription": "Terms and Privacy for the fernn application—use these URLs in the Discord Developer Portal and share them with moderators.",
+    "termsCta": "Terms of Service",
+    "privacyCta": "Privacy Policy",
+    "features": {
+      "slashFirst": {
+        "title": "Slash-first experience",
+        "description": "Discoverable commands, built-in validation, and ephemeral errors when something goes wrong—aligned with how Discord apps work today."
+      },
+      "moderation": {
+        "title": "Moderation toolkit",
+        "description": "Ban, kick, timed mute, nickname changes, and bulk clear with shared guild checks so only the right roles can act."
+      },
+      "serverInsight": {
+        "title": "Server & member insight",
+        "description": "Rich /user-info and /server-info embeds with badges, roles, and server metadata to help staff make faster decisions."
+      },
+      "serverLogging": {
+        "title": "Configurable server logging",
+        "description": "Point /server-log at a channel, tune categories, and let joins, leaves, profile changes, and moderation audit events land in one place."
+      },
+      "stack": {
+        "title": "Bun + TypeScript stack",
+        "description": "Fast cold starts on Bun, strict TypeScript, and discord.js v14 REST routes—great for contributors who want a clean codebase."
+      },
+      "docker": {
+        "title": "Docker-ready",
+        "description": "Ship the same process in containers, register commands globally or per guild, and keep secrets out of source control via environment variables."
+      }
+    },
+    "commands": {
+      "ping": {
+        "name": "/ping",
+        "description": "Check round-trip latency and confirm the bot is responding."
+      },
+      "ship": {
+        "name": "/ship",
+        "description": "Generate a playful compatibility card between two server members."
+      },
+      "uptime": {
+        "name": "/uptime",
+        "description": "See how long the current bot session has been online."
+      },
+      "ban": {
+        "name": "/ban",
+        "description": "Ban a member with an optional reason for your audit trail."
+      },
+      "kick": {
+        "name": "/kick",
+        "description": "Remove a member from the guild while keeping a reason on record."
+      },
+      "mute": {
+        "name": "/mute",
+        "description": "Apply a timed mute (timeout) with duration and optional reason."
+      },
+      "nickname": {
+        "name": "/nickname",
+        "description": "Set or reset another member's nickname when you have permission."
+      },
+      "clear": {
+        "name": "/clear",
+        "description": "Bulk-delete recent messages in the current text channel."
+      },
+      "userInfo": {
+        "name": "/user-info",
+        "description": "Inspect a user's profile, flags, roles, and join details."
+      },
+      "serverInfo": {
+        "name": "/server-info",
+        "description": "Summarize guild stats, boosts, channels, and verification level."
+      },
+      "serverLog": {
+        "name": "/server-log",
+        "description": "Open the logging panel to pick a channel and toggle event categories."
+      },
+      "serverIcon": {
+        "name": "/server-icon",
+        "description": "Manage the guild icon from Discord, including an add-image subcommand."
+      }
+    }
+  },
+  "hero": {
+    "pillBadge": "fernn",
+    "pillLine": "Discord bot",
+    "headlineLine1": "Moderation, utilities,",
+    "headlineLine2Before": "and",
+    "headlineEm": "server logs",
+    "headlineLine2After": "in one slash-command toolkit",
+    "subtext": "Invite fernn to coordinate your staff workflow—then tune logging, keep members informed, and lean on Bun-powered reliability behind the scenes.",
+    "addBotButton": "Add the bot to your server",
+    "termsButton": "Terms of Service",
+    "privacyButton": "Privacy Policy"
+  },
+  "footer": {
+    "githubLabel": "fernn on GitHub",
+    "emailLabel": "Email contact@fernaandojr.dev",
+    "home": "Home",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "termsFull": "Terms of Service",
+    "privacyFull": "Privacy Policy",
+    "copyright": "© Fernando Divino de Mores Júnior",
+    "tagline": "fernn — slash-command Discord bot (Bun, TypeScript, discord.js)."
+  },
+  "terms": {
+    "metaTitle": "Terms of Service — fernn",
+    "metaDescription": "Terms of Service for the fernn Discord bot.",
+    "title": "Terms of Service",
+    "description": "Last updated: 14 April 2026. Operator: Fernando Divino de Mores Júnior."
+  },
+  "privacy": {
+    "metaTitle": "Privacy Policy — fernn",
+    "metaDescription": "Privacy Policy for the fernn Discord bot.",
+    "title": "Privacy Policy",
+    "description": "Last updated: 14 April 2026. Operator: Fernando Divino de Mores Júnior. Contact: contact@fernaandojr.dev."
+  }
+}
