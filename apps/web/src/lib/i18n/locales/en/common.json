@@ -1,0 +1,303 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "signIn": "Sign in",
+    "site": {
+      "name": "Site",
+      "features": "Features",
+      "commands": "Commands"
+    },
+    "legal": {
+      "name": "Legal",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy"
+    },
+    "project": {
+      "name": "Project",
+      "repo": "Bot repository"
+    }
+  },
+  "a11y": {
+    "toggleMenu": "Toggle menu",
+    "github": "fernn on GitHub",
+    "discordInvite": "Add fernn to your Discord server (opens Discord in a new tab)",
+    "heroHeightFull": "Switch to fit-to-content height",
+    "heroHeightFit": "Switch to full-height hero"
+  },
+  "home": {
+    "aboutTitle": "What is fernn?",
+    "aboutP1": "fernn is a Discord bot built with TypeScript and Bun, using discord.js v14. Everything runs through modern slash commands—no prefix spam, clear permissions, and straightforward moderation and utility tools for your community.",
+    "aboutP2": "Optional server logging stores only your log-channel settings in MongoDB (not a history archive); events show up as rich embeds in the channel you choose. Terms of Service and Privacy Policy stay linked from this site for transparency and the Developer Portal.",
+    "featuresTitle": "Why teams use fernn",
+    "commandsTitle": "Slash commands",
+    "commandsColCommand": "Command",
+    "commandsColDescription": "What it does",
+    "commandsFootnote": "/server-icon includes an add-image subcommand for updating the guild icon workflow from chat.",
+    "legalStripTitle": "Policies",
+    "legalStripDescription": "Terms and Privacy for the fernn application—use these URLs in the Discord Developer Portal and share them with moderators.",
+    "termsCta": "Terms of Service",
+    "privacyCta": "Privacy Policy",
+    "features": {
+      "slashFirst": {
+        "title": "Slash-first experience",
+        "description": "Discoverable commands, built-in validation, and ephemeral errors when something goes wrong—aligned with how Discord apps work today."
+      },
+      "moderation": {
+        "title": "Moderation toolkit",
+        "description": "Ban, kick, timed mute, nickname changes, and bulk clear with shared guild checks so only the right roles can act."
+      },
+      "serverInsight": {
+        "title": "Server & member insight",
+        "description": "Rich /user-info and /server-info embeds with badges, roles, and server metadata to help staff make faster decisions."
+      },
+      "serverLogging": {
+        "title": "Configurable server logging",
+        "description": "Point /server-log at a channel, tune categories, and let joins, leaves, profile changes, and moderation audit events land in one place."
+      },
+      "stack": {
+        "title": "Bun + TypeScript stack",
+        "description": "Fast cold starts on Bun, strict TypeScript, and discord.js v14 REST routes—great for contributors who want a clean codebase."
+      },
+      "docker": {
+        "title": "Docker-ready",
+        "description": "Ship the same process in containers, register commands globally or per guild, and keep secrets out of source control via environment variables."
+      }
+    },
+    "commands": {
+      "ping": {
+        "name": "/ping",
+        "description": "Check round-trip latency and confirm the bot is responding."
+      },
+      "ship": {
+        "name": "/ship",
+        "description": "Generate a playful compatibility card between two server members."
+      },
+      "uptime": {
+        "name": "/uptime",
+        "description": "See how long the current bot session has been online."
+      },
+      "ban": {
+        "name": "/ban",
+        "description": "Ban a member with an optional reason for your audit trail."
+      },
+      "kick": {
+        "name": "/kick",
+        "description": "Remove a member from the guild while keeping a reason on record."
+      },
+      "mute": {
+        "name": "/mute",
+        "description": "Apply a timed mute (timeout) with duration and optional reason."
+      },
+      "nickname": {
+        "name": "/nickname",
+        "description": "Set or reset another member's nickname when you have permission."
+      },
+      "clear": {
+        "name": "/clear",
+        "description": "Bulk-delete recent messages in the current text channel."
+      },
+      "userInfo": {
+        "name": "/user-info",
+        "description": "Inspect a user's profile, flags, roles, and join details."
+      },
+      "serverInfo": {
+        "name": "/server-info",
+        "description": "Summarize guild stats, boosts, channels, and verification level."
+      },
+      "serverLog": {
+        "name": "/server-log",
+        "description": "Open the logging panel to pick a channel and toggle event categories."
+      },
+      "serverIcon": {
+        "name": "/server-icon",
+        "description": "Manage the guild icon from Discord, including an add-image subcommand."
+      }
+    }
+  },
+  "hero": {
+    "pillBadge": "fernn",
+    "pillLine": "Discord bot",
+    "headlineLine1": "Moderation, utilities,",
+    "headlineLine2Before": "and",
+    "headlineEm": "server logs",
+    "headlineLine2After": "in one slash-command toolkit",
+    "subtext": "Invite fernn to coordinate your staff workflow—then tune logging, keep members informed, and lean on Bun-powered reliability behind the scenes.",
+    "addBotButton": "Add the bot to your server",
+    "termsButton": "Terms of Service",
+    "privacyButton": "Privacy Policy"
+  },
+  "footer": {
+    "githubLabel": "fernn on GitHub",
+    "emailLabel": "Email contact@fernaandojr.dev",
+    "home": "Home",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "termsFull": "Terms of Service",
+    "privacyFull": "Privacy Policy",
+    "copyright": "© Fernando Divino de Mores Júnior",
+    "tagline": "fernn — slash-command Discord bot (Bun, TypeScript, discord.js)."
+  },
+  "terms": {
+    "metaTitle": "Terms of Service — fernn",
+    "metaDescription": "Terms of Service for the fernn Discord bot.",
+    "title": "Terms of Service",
+    "description": "Last updated: 14 April 2026. Operator: Fernando Divino de Mores Júnior."
+  },
+  "privacy": {
+    "metaTitle": "Privacy Policy — fernn",
+    "metaDescription": "Privacy Policy for the fernn Discord bot.",
+    "title": "Privacy Policy",
+    "description": "Last updated: 14 April 2026. Operator: Fernando Divino de Mores Júnior. Contact: contact@fernaandojr.dev."
+  },
+  "auth": {
+    "welcome": "Welcome back",
+    "accessYourAccount": "Sign in to manage your servers and logging settings.",
+    "signIn": "Sign in",
+    "signingIn": "Signing in…",
+    "signUp": "Sign up",
+    "signingUp": "Creating account…",
+    "signOut": "Sign out",
+    "createAccount": "Create account",
+    "createAccountTitle": "Create your account",
+    "newToPlatform": "New to fernn?",
+    "alreadyHaveAccount": "Already have an account?",
+    "name": "Name",
+    "enterName": "Your name",
+    "emailAddress": "Email",
+    "enterEmail": "you@example.com",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "enterPassword": "Enter your password",
+    "orContinueWith": "Or continue with",
+    "continueWithDiscord": "Continue with Discord",
+    "discordSignInFailed": "Discord sign-in failed. Try again.",
+    "callbackError": "Sign-in was interrupted. Please try again.",
+    "validationNameRequired": "Name must be at least 2 characters.",
+    "validationEmailInvalid": "Enter a valid email address.",
+    "validationEmailRequired": "Email is required.",
+    "validationPasswordMin": "Password must be at least 8 characters.",
+    "validationPasswordMatch": "Passwords do not match."
+  },
+  "dashboard": {
+    "sidebarTagline": "Server logging dashboard",
+    "nav": {
+      "platform": "Platform",
+      "overview": "Overview",
+      "guilds": "Guilds",
+      "profile": "Profile",
+      "home": "Back to site"
+    },
+    "overview": {
+      "title": "Overview",
+      "description": "Your account and quick links to guild logging.",
+      "greeting": "Hello, {name}",
+      "discordLinked": "Discord is connected — you can manage guilds where you have permission.",
+      "discordNotLinked": "Connect Discord to list guilds and configure server logging.",
+      "manageGuilds": "Manage guilds"
+    },
+    "profile": {
+      "title": "Profile",
+      "description": "Account details and Discord connection.",
+      "discordStatus": "Discord",
+      "discordConnected": "Connected",
+      "discordDisconnected": "Not connected",
+      "connectDiscord": "Connect Discord",
+      "discordLinkedHint": "Link Discord to see guilds you can manage and sync permissions.",
+      "refresh": "Refresh session"
+    },
+    "errors": {
+      "title": "Could not load data",
+      "description": "Connect Discord or confirm you can manage this server and the bot is installed."
+    },
+    "guilds": {
+      "title": "Guilds",
+      "description": "Servers where you can configure fernn logging.",
+      "errorTitle": "Could not load guilds",
+      "errorDescription": "Connect Discord or check that the bot is in your servers.",
+      "emptyTitle": "No guilds yet",
+      "emptyDescription": "Invite fernn to a server or connect Discord to see guilds here.",
+      "inviteBot": "Invite bot",
+      "owner": "Owner",
+      "manage": "Manage"
+    },
+    "settings": {
+      "title": "Logging settings",
+      "description": "Choose a channel and which event categories to post.",
+      "enabled": "Enable logging",
+      "enabledHint": "When off, no log embeds are sent for this server.",
+      "channel": "Log channel",
+      "channelPlaceholder": "Select a channel",
+      "noChannel": "No channel",
+      "categories": "Event categories",
+      "save": "Save settings",
+      "saved": "Settings saved",
+      "saveFailed": "Could not save settings",
+      "backToSettings": "Back to settings",
+      "event": {
+        "voice": "Voice",
+        "members": "Members",
+        "moderation": "Moderation",
+        "messages": "Messages"
+      }
+    },
+    "voiceChat": {
+      "title": "Dynamic voice",
+      "pageDescription": "Join-to-create hub and active personal voice rooms.",
+      "description": "Pick a voice channel as the hub. Members who join it get a private room they can customize with /voice-chat in Discord.",
+      "enabled": "Enable dynamic voice",
+      "enabledHint": "When off, joining the hub does nothing.",
+      "hubChannel": "Hub voice channel",
+      "hubPlaceholder": "Select hub channel",
+      "noHub": "No hub",
+      "save": "Save",
+      "saved": "Voice chat settings saved",
+      "saveFailed": "Could not save voice chat settings",
+      "openSettings": "Dynamic voice",
+      "backToLogging": "Back to logging",
+      "activeRooms": "Active rooms",
+      "noRooms": "No active personal voice channels.",
+      "limitUnlimited": "No limit",
+      "limitUsers": "{count} max",
+      "history": {
+        "title": "Voice activity log",
+        "description": "Timeline of dynamic voice rooms — kept after channels are deleted.",
+        "hint": "Events are stored when rooms are created, updated, joined, or removed.",
+        "empty": "No voice activity recorded yet.",
+        "loadMore": "Load older events",
+        "backToSettings": "Back to settings",
+        "deletedChannel": "Deleted channel",
+        "channelName": "Name: {name}",
+        "owner": "Owner: {id}",
+        "limit": "Limit: {limit}",
+        "previousName": "Was: {name}",
+        "members": "In channel: {count}",
+        "roles": "Roles: {count}",
+        "channelId": "Channel ID: {id}",
+        "actor": "By: {id}",
+        "event": {
+          "room_created": "Room created",
+          "room_deleted": "Room deleted",
+          "room_renamed": "Room renamed",
+          "limit_changed": "User limit changed",
+          "roles_changed": "Role access updated",
+          "member_joined": "Member joined room"
+        }
+      }
+    },
+    "logs": {
+      "title": "Log history",
+      "description": "Recent events posted to your configured log channel.",
+      "viewHistory": "View history",
+      "category": "Category",
+      "allCategories": "All categories",
+      "search": "Search",
+      "searchPlaceholder": "Search by user or action…",
+      "applyFilters": "Apply filters",
+      "noChannel": "No log channel configured.",
+      "configure": "Configure logging",
+      "empty": "No log entries match your filters.",
+      "openDiscord": "Open in Discord",
+      "loadMore": "Load more"
+    }
+  }
+}

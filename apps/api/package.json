@@ -1,0 +1,23 @@
+{
+  "name": "api",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/server.ts"
+  },
+  "dependencies": {
+    "@fernn/domains": "workspace:*",
+    "@hono/node-server": "^1.13.7",
+    "@hono/zod-validator": "^0.7.6",
+    "better-auth": "^1.4.19",
+    "dotenv": "^16.4.5",
+    "hono": "^4.12.2",
+    "mongodb": "^7.1.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3"
+  }
+}

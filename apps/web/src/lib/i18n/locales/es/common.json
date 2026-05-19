@@ -1,0 +1,303 @@
+{
+  "nav": {
+    "dashboard": "Panel",
+    "signIn": "Iniciar sesión",
+    "site": {
+      "name": "Sitio",
+      "features": "Funciones",
+      "commands": "Comandos"
+    },
+    "legal": {
+      "name": "Legal",
+      "terms": "Términos del servicio",
+      "privacy": "Política de privacidad"
+    },
+    "project": {
+      "name": "Proyecto",
+      "repo": "Repositorio del bot"
+    }
+  },
+  "a11y": {
+    "toggleMenu": "Abrir o cerrar menú",
+    "github": "fernn en GitHub",
+    "discordInvite": "Añadir fernn a tu servidor de Discord (se abre Discord en una pestaña nueva)",
+    "heroHeightFull": "Usar altura ajustada al contenido",
+    "heroHeightFit": "Usar héroe a altura completa"
+  },
+  "home": {
+    "aboutTitle": "¿Qué es fernn?",
+    "aboutP1": "fernn es un bot de Discord hecho con TypeScript y Bun, usando discord.js v14. Todo funciona con comandos slash modernos: sin prefijos molestos, permisos claros y herramientas de moderación y utilidad directas para tu comunidad.",
+    "aboutP2": "El registro opcional del servidor solo guarda en MongoDB la configuración del canal de logs (no un archivo histórico); los eventos aparecen como embeds en el canal que elijas. Los Términos del servicio y la Política de privacidad siguen enlazados en este sitio para transparencia y el Portal para desarrolladores.",
+    "featuresTitle": "Por qué los equipos usan fernn",
+    "commandsTitle": "Comandos slash",
+    "commandsColCommand": "Comando",
+    "commandsColDescription": "Qué hace",
+    "commandsFootnote": "/server-icon incluye el subcomando add-image para el flujo de actualización del icono del servidor desde el chat.",
+    "legalStripTitle": "Políticas",
+    "legalStripDescription": "Términos y Privacidad de la aplicación fernn: usa estas URLs en el Portal para desarrolladores de Discord y compártelas con el staff.",
+    "termsCta": "Términos del servicio",
+    "privacyCta": "Política de privacidad",
+    "features": {
+      "slashFirst": {
+        "title": "Experiencia centrada en slash",
+        "description": "Comandos descubribles, validación integrada y errores efímeros cuando algo falla, alineado con cómo funcionan las apps de Discord hoy."
+      },
+      "moderation": {
+        "title": "Kit de moderación",
+        "description": "Ban, expulsión, silencio temporal, apodos y limpieza masiva con comprobaciones de permisos para que solo los roles adecuados actúen."
+      },
+      "serverInsight": {
+        "title": "Contexto de servidor y miembros",
+        "description": "Embeds ricos de /user-info y /server-info con insignias, roles y metadatos para que el staff decida más rápido."
+      },
+      "serverLogging": {
+        "title": "Registro del servidor configurable",
+        "description": "Apunta /server-log a un canal, ajusta categorías y recibe entradas, salidas, cambios de perfil y eventos de auditoría de moderación en un solo lugar."
+      },
+      "stack": {
+        "title": "Stack Bun + TypeScript",
+        "description": "Arranques rápidos con Bun, TypeScript estricto y rutas REST de discord.js v14: ideal para quien quiera un código base limpio."
+      },
+      "docker": {
+        "title": "Listo para Docker",
+        "description": "Despliega el mismo proceso en contenedores, registra comandos globalmente o por gremio y mantén los secretos fuera del código con variables de entorno."
+      }
+    },
+    "commands": {
+      "ping": {
+        "name": "/ping",
+        "description": "Comprueba la latencia de ida y vuelta y que el bot responde."
+      },
+      "ship": {
+        "name": "/ship",
+        "description": "Genera una tarjeta de compatibilidad entre dos miembros del servidor."
+      },
+      "uptime": {
+        "name": "/uptime",
+        "description": "Muestra cuánto lleva en línea la sesión actual del bot."
+      },
+      "ban": {
+        "name": "/ban",
+        "description": "Banea a un miembro con motivo opcional para la auditoría."
+      },
+      "kick": {
+        "name": "/kick",
+        "description": "Expulsa a un miembro del gremio dejando constancia del motivo."
+      },
+      "mute": {
+        "name": "/mute",
+        "description": "Aplica un silencio temporal (timeout) con duración y motivo opcional."
+      },
+      "nickname": {
+        "name": "/nickname",
+        "description": "Establece o restablece el apodo de otro miembro si tienes permiso."
+      },
+      "clear": {
+        "name": "/clear",
+        "description": "Elimina en bloque mensajes recientes del canal de texto actual."
+      },
+      "userInfo": {
+        "name": "/user-info",
+        "description": "Inspecciona perfil, insignias, roles y datos de ingreso de un usuario."
+      },
+      "serverInfo": {
+        "name": "/server-info",
+        "description": "Resume estadísticas del gremio, boosts, canales y nivel de verificación."
+      },
+      "serverLog": {
+        "name": "/server-log",
+        "description": "Abre el panel de logs para elegir canal y activar categorías de eventos."
+      },
+      "serverIcon": {
+        "name": "/server-icon",
+        "description": "Gestiona el icono del gremio desde Discord, incluido el subcomando add-image."
+      }
+    }
+  },
+  "hero": {
+    "pillBadge": "fernn",
+    "pillLine": "Bot de Discord",
+    "headlineLine1": "Moderación, utilidades",
+    "headlineLine2Before": "y",
+    "headlineEm": "registros del servidor",
+    "headlineLine2After": "en un solo kit de comandos slash",
+    "subtext": "Invita a fernn para coordinar al staff: configura logs, informa a los miembros y apóyate en la fiabilidad impulsada por Bun.",
+    "addBotButton": "Añadir el bot a tu servidor",
+    "termsButton": "Términos del servicio",
+    "privacyButton": "Política de privacidad"
+  },
+  "footer": {
+    "githubLabel": "fernn en GitHub",
+    "emailLabel": "Correo contact@fernaandojr.dev",
+    "home": "Inicio",
+    "terms": "Términos",
+    "privacy": "Privacidad",
+    "termsFull": "Términos del servicio",
+    "privacyFull": "Política de privacidad",
+    "copyright": "© Fernando Divino de Mores Júnior",
+    "tagline": "fernn — bot de Discord con comandos slash (Bun, TypeScript, discord.js)."
+  },
+  "terms": {
+    "metaTitle": "Términos del servicio — fernn",
+    "metaDescription": "Términos del servicio para el bot de Discord fernn.",
+    "title": "Términos del servicio",
+    "description": "Última actualización: 14 de abril de 2026. Operador: Fernando Divino de Mores Júnior."
+  },
+  "privacy": {
+    "metaTitle": "Política de privacidad — fernn",
+    "metaDescription": "Política de privacidad para el bot de Discord fernn.",
+    "title": "Política de privacidad",
+    "description": "Última actualización: 14 de abril de 2026. Operador: Fernando Divino de Mores Júnior. Contacto: contact@fernaandojr.dev."
+  },
+  "auth": {
+    "welcome": "Bienvenido de nuevo",
+    "accessYourAccount": "Inicia sesión para gestionar tus servidores y la configuración de registros.",
+    "signIn": "Iniciar sesión",
+    "signingIn": "Iniciando sesión…",
+    "signUp": "Registrarse",
+    "signingUp": "Creando cuenta…",
+    "signOut": "Cerrar sesión",
+    "createAccount": "Crear cuenta",
+    "createAccountTitle": "Crea tu cuenta",
+    "newToPlatform": "¿Nuevo en fernn?",
+    "alreadyHaveAccount": "¿Ya tienes cuenta?",
+    "name": "Nombre",
+    "enterName": "Tu nombre",
+    "emailAddress": "Correo electrónico",
+    "enterEmail": "tu@ejemplo.com",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "enterPassword": "Introduce tu contraseña",
+    "orContinueWith": "O continúa con",
+    "continueWithDiscord": "Continuar con Discord",
+    "discordSignInFailed": "Error al iniciar sesión con Discord. Inténtalo de nuevo.",
+    "callbackError": "Se interrumpió el inicio de sesión. Inténtalo de nuevo.",
+    "validationNameRequired": "El nombre debe tener al menos 2 caracteres.",
+    "validationEmailInvalid": "Introduce un correo electrónico válido.",
+    "validationEmailRequired": "El correo electrónico es obligatorio.",
+    "validationPasswordMin": "La contraseña debe tener al menos 8 caracteres.",
+    "validationPasswordMatch": "Las contraseñas no coinciden."
+  },
+  "dashboard": {
+    "sidebarTagline": "Panel de registros del servidor",
+    "nav": {
+      "platform": "Plataforma",
+      "overview": "Resumen",
+      "guilds": "Servidores",
+      "profile": "Perfil",
+      "home": "Volver al sitio"
+    },
+    "overview": {
+      "title": "Resumen",
+      "description": "Tu cuenta y accesos rápidos a los registros por servidor.",
+      "greeting": "Hola, {name}",
+      "discordLinked": "Discord está conectado: puedes gestionar servidores donde tengas permiso.",
+      "discordNotLinked": "Conecta Discord para ver servidores y configurar los registros.",
+      "manageGuilds": "Gestionar servidores"
+    },
+    "profile": {
+      "title": "Perfil",
+      "description": "Datos de la cuenta y conexión con Discord.",
+      "discordStatus": "Discord",
+      "discordConnected": "Conectado",
+      "discordDisconnected": "Sin conectar",
+      "connectDiscord": "Conectar Discord",
+      "discordLinkedHint": "Vincula Discord para ver los servidores que puedes gestionar y sincronizar permisos.",
+      "refresh": "Actualizar sesión"
+    },
+    "errors": {
+      "title": "No se pudieron cargar los datos",
+      "description": "Conecta Discord o confirma que puedes administrar este servidor y que el bot está instalado."
+    },
+    "guilds": {
+      "title": "Servidores",
+      "description": "Servidores donde puedes configurar los registros de fernn.",
+      "errorTitle": "No se pudieron cargar los servidores",
+      "errorDescription": "Conecta Discord o comprueba que el bot esté en tus servidores.",
+      "emptyTitle": "Aún no hay servidores",
+      "emptyDescription": "Invita a fernn a un servidor o conecta Discord para verlos aquí.",
+      "inviteBot": "Invitar bot",
+      "owner": "Propietario",
+      "manage": "Gestionar"
+    },
+    "settings": {
+      "title": "Configuración de registros",
+      "description": "Elige un canal y qué categorías de eventos publicar.",
+      "enabled": "Activar registros",
+      "enabledHint": "Si está desactivado, no se envían embeds de registro en este servidor.",
+      "channel": "Canal de registros",
+      "channelPlaceholder": "Selecciona un canal",
+      "noChannel": "Sin canal",
+      "categories": "Categorías de eventos",
+      "save": "Guardar configuración",
+      "saved": "Configuración guardada",
+      "saveFailed": "No se pudo guardar la configuración",
+      "backToSettings": "Volver a configuración",
+      "event": {
+        "voice": "Voz",
+        "members": "Miembros",
+        "moderation": "Moderación",
+        "messages": "Mensajes"
+      }
+    },
+    "voiceChat": {
+      "title": "Voz dinámica",
+      "pageDescription": "Hub join-to-create y salas de voz personales activas.",
+      "description": "Elige un canal de voz como hub. Quien entre obtiene una sala privada que puede personalizar con /voice-chat en Discord.",
+      "enabled": "Activar voz dinámica",
+      "enabledHint": "Si está desactivado, entrar al hub no hace nada.",
+      "hubChannel": "Canal de voz hub",
+      "hubPlaceholder": "Seleccionar canal hub",
+      "noHub": "Sin hub",
+      "save": "Guardar",
+      "saved": "Configuración de voz guardada",
+      "saveFailed": "No se pudo guardar la configuración de voz",
+      "openSettings": "Voz dinámica",
+      "backToLogging": "Volver a registros",
+      "activeRooms": "Salas activas",
+      "noRooms": "No hay salas de voz personales activas.",
+      "limitUnlimited": "Sin límite",
+      "limitUsers": "Máx. {count}",
+      "history": {
+        "title": "Registro de voz",
+        "description": "Línea de tiempo de salas dinámicas — se conserva tras borrar el canal.",
+        "hint": "Se guardan eventos al crear, actualizar, entrar o eliminar salas.",
+        "empty": "Aún no hay actividad de voz registrada.",
+        "loadMore": "Cargar eventos anteriores",
+        "backToSettings": "Volver a configuración",
+        "deletedChannel": "Canal eliminado",
+        "channelName": "Nombre: {name}",
+        "owner": "Dueño: {id}",
+        "limit": "Límite: {limit}",
+        "previousName": "Antes: {name}",
+        "members": "En canal: {count}",
+        "roles": "Roles: {count}",
+        "channelId": "ID canal: {id}",
+        "actor": "Por: {id}",
+        "event": {
+          "room_created": "Sala creada",
+          "room_deleted": "Sala eliminada",
+          "room_renamed": "Sala renombrada",
+          "limit_changed": "Límite actualizado",
+          "roles_changed": "Acceso por roles actualizado",
+          "member_joined": "Miembro entró a la sala"
+        }
+      }
+    },
+    "logs": {
+      "title": "Historial de registros",
+      "description": "Eventos recientes publicados en tu canal de registros configurado.",
+      "viewHistory": "Ver historial",
+      "category": "Categoría",
+      "allCategories": "Todas las categorías",
+      "search": "Buscar",
+      "searchPlaceholder": "Buscar por usuario o acción…",
+      "applyFilters": "Aplicar filtros",
+      "noChannel": "No hay canal de registros configurado.",
+      "configure": "Configurar registros",
+      "empty": "Ningún registro coincide con tus filtros.",
+      "openDiscord": "Abrir en Discord",
+      "loadMore": "Cargar más"
+    }
+  }
+}
