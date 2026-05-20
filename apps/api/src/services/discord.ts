@@ -1,5 +1,6 @@
 import { ObjectId } from 'mongodb';
 import { env } from '../constants/envs.js';
+import { ACCOUNT_COLLECTION } from '../db/collections.js';
 import { db } from '../db/mongo.js';
 
 const DISCORD_API = 'https://discord.com/api/v10';
@@ -62,7 +63,7 @@ export function canManageGuild(permissions: string): boolean {
 export async function getDiscordAccessToken(
   userId: string,
 ): Promise<string | null> {
-  const account = await db.collection('account').findOne({
+  const account = await db.collection(ACCOUNT_COLLECTION).findOne({
     userId: new ObjectId(userId),
     providerId: 'discord',
   });
@@ -90,13 +91,14 @@ export async function fetchBotGuilds(): Promise<DiscordGuildSummary[]> {
 export async function assertUserManagesGuild(
   userId: string,
   guildId: string,
+  accessToken?: string,
 ): Promise<void> {
-  const accessToken = await getDiscordAccessToken(userId);
-  if (!accessToken) {
+  const token = accessToken ?? (await getDiscordAccessToken(userId));
+  if (!token) {
     throw new Error('DISCORD_NOT_LINKED');
   }
 
-  const guilds = await fetchUserGuilds(accessToken);
+  const guilds = await fetchUserGuilds(token);
   const guild = guilds.find((g) => g.id === guildId);
   if (!guild || !canManageGuild(guild.permissions)) {
     throw new Error('FORBIDDEN_GUILD');
@@ -137,24 +139,19 @@ export type DiscordChannel = {
   type: number;
 };
 
-export async function fetchGuildTextChannels(
-  guildId: string,
-  accessToken: string,
-): Promise<DiscordChannel[]> {
-  const channels = await discordFetch<DiscordChannel[]>(
-    `/guilds/${guildId}/channels`,
-    accessToken,
-  );
-  return channels.filter((c) => c.type === 0 || c.type === 5);
-}
+export type GuildChannelKind = 'text' | 'voice';
 
-export async function fetchGuildVoiceChannels(
+export async function fetchGuildChannels(
   guildId: string,
-  accessToken: string,
+  kind: GuildChannelKind,
 ): Promise<DiscordChannel[]> {
+  // Guild channel list requires a bot token; user OAuth (guilds scope) cannot call this route.
   const channels = await discordFetch<DiscordChannel[]>(
     `/guilds/${guildId}/channels`,
-    accessToken,
+    `Bot ${env.DISCORD_BOT_TOKEN}`,
   );
-  return channels.filter((c) => c.type === 2);
+  if (kind === 'voice') {
+    return channels.filter((c) => c.type === 2);
+  }
+  return channels.filter((c) => c.type === 0 || c.type === 5);
 }

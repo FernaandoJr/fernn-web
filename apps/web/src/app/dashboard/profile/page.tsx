@@ -21,7 +21,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 
 export default function ProfilePage() {
   const t = useTranslations()
-  const { user, isLoading, refetch } = useUser()
+  const { user, isLoading } = useUser()
   const [discordLoading, setDiscordLoading] = useState(false)
 
   const handleConnectDiscord = async () => {
@@ -81,19 +81,7 @@ export default function ProfilePage() {
                 )}
                 {t("dashboard.profile.connectDiscord")}
               </Button>
-            ) : (
-              <p className="text-muted-foreground text-sm">
-                {t("dashboard.profile.discordLinkedHint")}
-              </p>
-            )}
-            <Button
-              type="button"
-              variant="ghost"
-              size="sm"
-              onClick={() => refetch()}
-            >
-              {t("dashboard.profile.refresh")}
-            </Button>
+            ) : null}
           </CardContent>
         </Card>
       )}

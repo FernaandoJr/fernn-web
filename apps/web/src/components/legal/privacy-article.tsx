@@ -15,7 +15,7 @@ export function PrivacyArticle({
 function PrivacyArticleEn({ siteUrl }: { siteUrl: string }) {
   return (
     <>
-      <p className="rounded-lg border border-border bg-muted/50 px-4 py-3 text-foreground">
+      <p className="rounded-md border border-border bg-muted/50 px-4 py-3 text-foreground">
         This policy describes how fernn handles information in connection with Discord. It
         reflects how the open-source bot is designed; consider legal counsel for your
         jurisdiction if you rely on it commercially.
@@ -152,7 +152,7 @@ function PrivacyArticleEn({ siteUrl }: { siteUrl: string }) {
 function PrivacyArticleEs({ siteUrl }: { siteUrl: string }) {
   return (
     <>
-      <p className="rounded-lg border border-border bg-muted/50 px-4 py-3 text-foreground">
+      <p className="rounded-md border border-border bg-muted/50 px-4 py-3 text-foreground">
         Esta política describe cómo fernn trata la información relacionada con Discord. Refleja
         el diseño del bot de código abierto; consulta asesoría legal en tu jurisdicción si la
         usas con fines comerciales.
@@ -291,7 +291,7 @@ function PrivacyArticleEs({ siteUrl }: { siteUrl: string }) {
 function PrivacyArticlePtBR({ siteUrl }: { siteUrl: string }) {
   return (
     <>
-      <p className="rounded-lg border border-border bg-muted/50 px-4 py-3 text-foreground">
+      <p className="rounded-md border border-border bg-muted/50 px-4 py-3 text-foreground">
         Esta política descreve como o fernn trata informações em conexão com o Discord. Ela reflete
         o design do bot de código aberto; considere assessoria jurídica na sua jurisdição se
         depender dela comercialmente.

@@ -20,10 +20,7 @@ export default function DashboardPage() {
   const { user, isLoading } = useUser()
 
   return (
-    <DashboardShell
-      title={t("dashboard.overview.title")}
-      description={t("dashboard.overview.description")}
-    >
+    <DashboardShell title={t("dashboard.overview.title")}>
       {isLoading ? (
         <Skeleton className="h-32 w-full max-w-lg" />
       ) : (

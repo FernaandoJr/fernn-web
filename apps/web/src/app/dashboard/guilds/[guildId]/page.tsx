@@ -16,7 +16,6 @@ export default function GuildSettingsPage() {
   return (
     <DashboardShell
       title={t("dashboard.settings.title")}
-      description={t("dashboard.settings.description")}
       actions={
         <div className="flex flex-wrap gap-2">
           <Button asChild variant="outline" size="sm">

@@ -189,9 +189,8 @@
     },
     "overview": {
       "title": "Resumen",
-      "description": "Tu cuenta y accesos rápidos a los registros por servidor.",
       "greeting": "Hola, {name}",
-      "discordLinked": "Discord está conectado: puedes gestionar servidores donde tengas permiso.",
+      "discordLinked": "Discord conectado.",
       "discordNotLinked": "Conecta Discord para ver servidores y configurar los registros.",
       "manageGuilds": "Gestionar servidores"
     },
@@ -201,9 +200,7 @@
       "discordStatus": "Discord",
       "discordConnected": "Conectado",
       "discordDisconnected": "Sin conectar",
-      "connectDiscord": "Conectar Discord",
-      "discordLinkedHint": "Vincula Discord para ver los servidores que puedes gestionar y sincronizar permisos.",
-      "refresh": "Actualizar sesión"
+      "connectDiscord": "Conectar Discord"
     },
     "errors": {
       "title": "No se pudieron cargar los datos",
@@ -211,7 +208,6 @@
     },
     "guilds": {
       "title": "Servidores",
-      "description": "Servidores donde puedes configurar los registros de fernn.",
       "errorTitle": "No se pudieron cargar los servidores",
       "errorDescription": "Conecta Discord o comprueba que el bot esté en tus servidores.",
       "emptyTitle": "Aún no hay servidores",
@@ -222,7 +218,6 @@
     },
     "settings": {
       "title": "Configuración de registros",
-      "description": "Elige un canal y qué categorías de eventos publicar.",
       "enabled": "Activar registros",
       "enabledHint": "Si está desactivado, no se envían embeds de registro en este servidor.",
       "channel": "Canal de registros",

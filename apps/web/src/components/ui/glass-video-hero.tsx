@@ -12,7 +12,7 @@ const DEFAULT_VIDEO_URL =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260210_031346_d87182fb-b0af-4273-84d1-c6fd17d6bf0f.mp4"
 
 const glass =
-  "rounded-[10px] border border-[rgba(164,132,215,0.5)] bg-[rgba(85,80,110,0.4)] backdrop-blur-xl"
+  "rounded-md border border-[rgba(164,132,215,0.5)] bg-[rgba(85,80,110,0.4)] backdrop-blur-xl"
 
 export function HeroSection({
   videoUrl = DEFAULT_VIDEO_URL,
@@ -71,7 +71,7 @@ export function HeroSection({
             "[font-family:var(--font-cabin)]"
           )}
         >
-          <span className="rounded-[6px] bg-primary px-2.5 py-1 text-xs font-medium text-primary-foreground shadow-[0_0_8px_rgba(195,6,152,0.45)]">
+          <span className="rounded-md bg-primary px-2.5 py-1 text-xs font-medium text-primary-foreground shadow-[0_0_8px_rgba(195,6,152,0.45)]">
             {t("hero.pillBadge")}
           </span>
           <span className="text-sm font-medium tracking-wide text-white">{t("hero.pillLine")}</span>
@@ -99,7 +99,7 @@ export function HeroSection({
             asChild
             size="lg"
             className={cn(
-              "rounded-[10px] px-8 py-6 text-base shadow-lg shadow-primary/25 [font-family:var(--font-cabin)]"
+              "rounded-md px-8 py-6 text-base shadow-lg shadow-primary/25 [font-family:var(--font-cabin)]"
             )}
           >
             <a
@@ -116,7 +116,7 @@ export function HeroSection({
             variant="outline"
             size="lg"
             className={cn(
-              "rounded-[10px] px-8 py-6 text-base [font-family:var(--font-cabin)]",
+              "rounded-md px-8 py-6 text-base [font-family:var(--font-cabin)]",
               "border-white/35 bg-black/25 text-white hover:bg-white/15 hover:text-white"
             )}
           >
@@ -127,7 +127,7 @@ export function HeroSection({
             variant="outline"
             size="lg"
             className={cn(
-              "rounded-[10px] px-8 py-6 text-base [font-family:var(--font-cabin)]",
+              "rounded-md px-8 py-6 text-base [font-family:var(--font-cabin)]",
               "border-white/35 bg-black/25 text-white hover:bg-white/15 hover:text-white"
             )}
           >

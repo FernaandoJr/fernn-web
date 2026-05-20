@@ -92,7 +92,7 @@ export async function HomeMarketingSections() {
           >
             {t("home.commandsTitle")}
           </h2>
-          <div className="mt-6 overflow-x-auto rounded-lg border border-border/60">
+          <div className="mt-6 overflow-x-auto rounded-md border border-border/60">
             <table className="w-full min-w-lg border-collapse text-left text-sm">
               <thead className="bg-muted/50 [font-family:var(--font-cabin)]">
                 <tr>

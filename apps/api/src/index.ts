@@ -4,16 +4,9 @@ import { auth } from './auth.js';
 import { env } from './constants/envs.js';
 import authRoutes from './routes/auth.js';
 import guildsRoutes from './routes/guilds.js';
+import type { AppVariables } from './types/session.js';
 
-type SessionUser = (typeof auth.$Infer)['Session']['user'];
-type SessionSession = (typeof auth.$Infer)['Session']['session'];
-
-const app = new Hono<{
-  Variables: {
-    user: SessionUser | null;
-    session: SessionSession | null;
-  };
-}>();
+const app = new Hono<{ Variables: AppVariables }>();
 
 app.use('/*', cors({ origin: env.WEB_APP_ORIGIN, credentials: true }));
 

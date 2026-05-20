@@ -7,16 +7,14 @@ import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
 import type { ServerLogEventFlags } from "@/lib/api-types"
+import { queryKeys } from "@/lib/query-keys"
+import {
+  GuildChannelSelectField,
+  GuildFeatureEnabledField,
+} from "@/components/guilds/guild-feature-fields"
 import { QueryErrorCard } from "@/components/guilds/query-error-card"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Switch } from "@/components/ui/switch"
 import {
@@ -37,13 +35,13 @@ export function GuildSettingsForm({ guildId }: { guildId: string }) {
   const queryClient = useQueryClient()
 
   const settingsQuery = useQuery({
-    queryKey: ["guild-settings", guildId],
+    queryKey: queryKeys.guilds.settings(guildId),
     queryFn: () => fetchGuildSettings(guildId),
   })
 
   const channelsQuery = useQuery({
-    queryKey: ["guild-channels", guildId],
-    queryFn: () => fetchGuildChannels(guildId),
+    queryKey: queryKeys.guilds.channels(guildId, "text"),
+    queryFn: () => fetchGuildChannels(guildId, "text"),
     enabled: settingsQuery.isSuccess,
   })
 
@@ -67,7 +65,9 @@ export function GuildSettingsForm({ guildId }: { guildId: string }) {
     mutationFn: () =>
       updateGuildSettings(guildId, { channelId, enabled, events }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["guild-settings", guildId] })
+      queryClient.invalidateQueries({
+        queryKey: queryKeys.guilds.settings(guildId),
+      })
       toast.success(t("dashboard.settings.saved"))
     },
     onError: () => toast.error(t("dashboard.settings.saveFailed")),
@@ -89,49 +89,28 @@ export function GuildSettingsForm({ guildId }: { guildId: string }) {
         saveMutation.mutate()
       }}
     >
-      <div className="flex items-center justify-between gap-4">
-        <div className="space-y-1">
-          <Label htmlFor="logging-enabled">
-            {t("dashboard.settings.enabled")}
-          </Label>
-          <p className="text-muted-foreground text-sm">
-            {t("dashboard.settings.enabledHint")}
-          </p>
-        </div>
-        <Switch
-          id="logging-enabled"
-          checked={enabled}
-          onCheckedChange={setEnabled}
-        />
-      </div>
+      <GuildFeatureEnabledField
+        id="logging-enabled"
+        labelKey="dashboard.settings.enabled"
+        hintKey="dashboard.settings.enabledHint"
+        checked={enabled}
+        onCheckedChange={setEnabled}
+      />
 
-      <div className="space-y-2">
-        <Label>{t("dashboard.settings.channel")}</Label>
-        <Select
-          value={channelId ?? "none"}
-          onValueChange={(v) => setChannelId(v === "none" ? null : v)}
-          disabled={channelsQuery.isLoading}
-        >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder={t("dashboard.settings.channelPlaceholder")} />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="none">
-              {t("dashboard.settings.noChannel")}
-            </SelectItem>
-            {channelsQuery.data?.map((ch) => (
-              <SelectItem key={ch.id} value={ch.id}>
-                #{ch.name}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
+      <GuildChannelSelectField
+        value={channelId}
+        onChange={setChannelId}
+        channels={channelsQuery.data}
+        loading={channelsQuery.isLoading}
+        labelKey="dashboard.settings.channel"
+        placeholderKey="dashboard.settings.channelPlaceholder"
+        noneKey="dashboard.settings.noChannel"
+      />
 
       <div className="space-y-3">
         <Label>{t("dashboard.settings.categories")}</Label>
         {EVENT_KEYS.map((key) => (
-          <div key={key} className="flex items-center justify-between gap-4">
+          <div className="flex items-center justify-between gap-4" key={key}>
             <span className="text-sm">{t(`dashboard.settings.event.${key}`)}</span>
             <Switch
               checked={events[key]}
@@ -152,5 +131,3 @@ export function GuildSettingsForm({ guildId }: { guildId: string }) {
     </form>
   )
 }
-
-

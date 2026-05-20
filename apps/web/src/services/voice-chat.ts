@@ -1,5 +1,4 @@
 import type {
-  GuildChannel,
   VoiceChatEventsPage,
   VoiceChatSettings,
   VoiceChatSettingsUpdate,
@@ -26,15 +25,6 @@ export async function updateVoiceChatSettings(
     body
   )
   return res.data
-}
-
-export async function fetchGuildVoiceChannels(
-  guildId: string
-): Promise<GuildChannel[]> {
-  const res = await apiClient.get<{ channels: GuildChannel[] }>(
-    `guilds/${guildId}/voice-channels`
-  )
-  return res.data.channels
 }
 
 export async function fetchVoiceChatEvents(

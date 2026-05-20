@@ -1,15 +1,32 @@
 import type { Metadata } from "next"
-import { Cabin, Geist, Geist_Mono, Instrument_Serif, Inter } from "next/font/google"
+import {
+  Cabin,
+  Instrument_Serif,
+  Inter,
+  JetBrains_Mono,
+  Plus_Jakarta_Sans,
+} from "next/font/google"
 import { NextIntlClientProvider } from "next-intl"
 import { getLocale, getMessages } from "next-intl/server"
 
 import "./globals.css"
+import { QueryProvider } from "@/components/providers/query-provider"
 import { Toaster } from "@/components/ui/sonner"
 import { htmlLangAttribute } from "@/lib/i18n/server"
 import { cn } from "@/lib/utils"
 import { getSiteUrl } from "@/lib/site"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+})
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+})
 
 const cabin = Cabin({
   subsets: ["latin"],
@@ -22,16 +39,6 @@ const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   variable: "--font-instrument",
   display: "swap",
-})
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-})
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
 })
 
 export const metadata: Metadata = {
@@ -59,18 +66,20 @@ export default async function RootLayout({
         "dark",
         "h-full",
         "antialiased",
-        geistSans.variable,
-        geistMono.variable,
-        "font-sans",
+        plusJakarta.variable,
         inter.variable,
+        jetbrainsMono.variable,
+        "font-sans",
         cabin.variable,
         instrumentSerif.variable
       )}
     >
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider key={locale} locale={locale} messages={messages}>
-          {children}
-          <Toaster richColors position="top-center" />
+          <QueryProvider>
+            {children}
+            <Toaster richColors position="top-center" />
+          </QueryProvider>
         </NextIntlClientProvider>
       </body>
     </html>

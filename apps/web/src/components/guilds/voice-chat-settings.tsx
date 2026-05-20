@@ -7,21 +7,17 @@ import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
+import { queryKeys } from "@/lib/query-keys"
+import {
+  GuildChannelSelectField,
+  GuildFeatureEnabledField,
+} from "@/components/guilds/guild-feature-fields"
 import { QueryErrorCard } from "@/components/guilds/query-error-card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 import { Skeleton } from "@/components/ui/skeleton"
-import { Switch } from "@/components/ui/switch"
+import { fetchGuildChannels } from "@/services/guilds"
 import {
-  fetchGuildVoiceChannels,
   fetchVoiceChatStats,
   updateVoiceChatSettings,
 } from "@/services/voice-chat"
@@ -31,13 +27,13 @@ export function VoiceChatSettings({ guildId }: { guildId: string }) {
   const queryClient = useQueryClient()
 
   const statsQuery = useQuery({
-    queryKey: ["voice-chat", guildId],
+    queryKey: queryKeys.voiceChat.stats(guildId),
     queryFn: () => fetchVoiceChatStats(guildId),
   })
 
   const channelsQuery = useQuery({
-    queryKey: ["guild-voice-channels", guildId],
-    queryFn: () => fetchGuildVoiceChannels(guildId),
+    queryKey: queryKeys.guilds.channels(guildId, "voice"),
+    queryFn: () => fetchGuildChannels(guildId, "voice"),
     enabled: statsQuery.isSuccess,
   })
 
@@ -54,7 +50,9 @@ export function VoiceChatSettings({ guildId }: { guildId: string }) {
     mutationFn: () =>
       updateVoiceChatSettings(guildId, { hubChannelId, enabled }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["voice-chat", guildId] })
+      queryClient.invalidateQueries({
+        queryKey: queryKeys.voiceChat.stats(guildId),
+      })
       toast.success(t("dashboard.voiceChat.saved"))
     },
     onError: () => toast.error(t("dashboard.voiceChat.saveFailed")),
@@ -89,46 +87,24 @@ export function VoiceChatSettings({ guildId }: { guildId: string }) {
           </Link>
         </p>
 
-        <div className="flex items-center justify-between gap-4">
-          <div className="space-y-1">
-            <Label htmlFor="voice-enabled">
-              {t("dashboard.voiceChat.enabled")}
-            </Label>
-            <p className="text-muted-foreground text-sm">
-              {t("dashboard.voiceChat.enabledHint")}
-            </p>
-          </div>
-          <Switch
-            id="voice-enabled"
-            checked={enabled}
-            onCheckedChange={setEnabled}
-          />
-        </div>
+        <GuildFeatureEnabledField
+          id="voice-enabled"
+          labelKey="dashboard.voiceChat.enabled"
+          hintKey="dashboard.voiceChat.enabledHint"
+          checked={enabled}
+          onCheckedChange={setEnabled}
+        />
 
-        <div className="space-y-2">
-          <Label>{t("dashboard.voiceChat.hubChannel")}</Label>
-          <Select
-            value={hubChannelId ?? "none"}
-            onValueChange={(v) => setHubChannelId(v === "none" ? null : v)}
-            disabled={channelsQuery.isLoading}
-          >
-            <SelectTrigger className="w-full">
-              <SelectValue
-                placeholder={t("dashboard.voiceChat.hubPlaceholder")}
-              />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="none">
-                {t("dashboard.voiceChat.noHub")}
-              </SelectItem>
-              {channelsQuery.data?.map((ch) => (
-                <SelectItem key={ch.id} value={ch.id}>
-                  {ch.name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
+        <GuildChannelSelectField
+          value={hubChannelId}
+          onChange={setHubChannelId}
+          channels={channelsQuery.data}
+          loading={channelsQuery.isLoading}
+          labelKey="dashboard.voiceChat.hubChannel"
+          placeholderKey="dashboard.voiceChat.hubPlaceholder"
+          noneKey="dashboard.voiceChat.noHub"
+          prefix=""
+        />
 
         <Button type="submit" disabled={saveMutation.isPending}>
           {saveMutation.isPending ? (
@@ -150,7 +126,7 @@ export function VoiceChatSettings({ guildId }: { guildId: string }) {
             {t("dashboard.voiceChat.noRooms")}
           </p>
         ) : (
-          <ul className="divide-border divide-y rounded-lg border">
+          <ul className="divide-border divide-y rounded-md border">
             {rooms.map((room) => (
               <li
                 key={room.channelId}
@@ -174,4 +150,3 @@ export function VoiceChatSettings({ guildId }: { guildId: string }) {
     </div>
   )
 }
-

@@ -132,7 +132,7 @@ export function GuildLogsView({ guildId }: { guildId: string }) {
           {items.map((entry) => (
             <li
               key={entry.id}
-              className="border-border flex gap-3 rounded-lg border p-4"
+              className="border-border flex gap-3 rounded-md border p-4"
               style={{
                 borderLeftWidth: 4,
                 borderLeftColor: entry.color

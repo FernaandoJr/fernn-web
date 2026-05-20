@@ -189,9 +189,8 @@
     },
     "overview": {
       "title": "Overview",
-      "description": "Your account and quick links to guild logging.",
       "greeting": "Hello, {name}",
-      "discordLinked": "Discord is connected — you can manage guilds where you have permission.",
+      "discordLinked": "Discord connected.",
       "discordNotLinked": "Connect Discord to list guilds and configure server logging.",
       "manageGuilds": "Manage guilds"
     },
@@ -201,9 +200,7 @@
       "discordStatus": "Discord",
       "discordConnected": "Connected",
       "discordDisconnected": "Not connected",
-      "connectDiscord": "Connect Discord",
-      "discordLinkedHint": "Link Discord to see guilds you can manage and sync permissions.",
-      "refresh": "Refresh session"
+      "connectDiscord": "Connect Discord"
     },
     "errors": {
       "title": "Could not load data",
@@ -211,7 +208,6 @@
     },
     "guilds": {
       "title": "Guilds",
-      "description": "Servers where you can configure fernn logging.",
       "errorTitle": "Could not load guilds",
       "errorDescription": "Connect Discord or check that the bot is in your servers.",
       "emptyTitle": "No guilds yet",
@@ -222,7 +218,6 @@
     },
     "settings": {
       "title": "Logging settings",
-      "description": "Choose a channel and which event categories to post.",
       "enabled": "Enable logging",
       "enabledHint": "When off, no log embeds are sent for this server.",
       "channel": "Log channel",

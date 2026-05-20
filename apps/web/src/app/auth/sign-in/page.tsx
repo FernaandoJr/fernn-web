@@ -39,7 +39,7 @@ export default function SignInPage() {
       </header>
       <ScrollArea className="relative z-10 flex-1">
         <div className="mx-auto flex min-h-[calc(100dvh-3.5rem)] max-w-lg items-center justify-center p-6 sm:p-10">
-          <div className="border-border/80 bg-card/90 w-full rounded-2xl border p-6 shadow-lg backdrop-blur-sm sm:p-8">
+          <div className="border-border/80 bg-card/90 w-full rounded-md border p-6 shadow-lg backdrop-blur-sm sm:p-8">
             <SignInForm />
             <p className="text-muted-foreground mt-6 text-center text-xs">
               <Link href="/terms" className="hover:text-foreground underline">

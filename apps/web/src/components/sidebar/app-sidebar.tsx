@@ -53,15 +53,18 @@ export function AppSidebar(props: ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <Link href="/dashboard">
-                <div className="bg-primary text-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg text-sm font-bold">
-                  f
-                </div>
-                <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">fernn</span>
-                  <span className="text-muted-foreground truncate text-xs">
-                    {t("dashboard.sidebarTagline")}
-                  </span>
-                </div>
+                <span className="relative size-8 shrink-0 overflow-hidden rounded-md">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/fernn.png"
+                    alt=""
+                    width={32}
+                    height={32}
+                    className="size-full object-cover"
+                    decoding="async"
+                  />
+                </span>
+                <span className="truncate font-semibold">Fernn</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -74,9 +77,10 @@ export function AppSidebar(props: ComponentProps<typeof Sidebar>) {
         {!isLoading && user && (
           <NavUser
             user={{
+              id: user.id,
               name: user.name,
               email: user.email,
-              avatar: user.image ?? "",
+              image: user.image,
             }}
           />
         )}

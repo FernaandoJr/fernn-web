@@ -189,9 +189,8 @@
     },
     "overview": {
       "title": "Visão geral",
-      "description": "Sua conta e atalhos para logs por servidor.",
       "greeting": "Olá, {name}",
-      "discordLinked": "Discord conectado — você pode gerenciar servidores em que tiver permissão.",
+      "discordLinked": "Discord conectado.",
       "discordNotLinked": "Conecte o Discord para listar servidores e configurar logs.",
       "manageGuilds": "Gerenciar servidores"
     },
@@ -201,9 +200,7 @@
       "discordStatus": "Discord",
       "discordConnected": "Conectado",
       "discordDisconnected": "Não conectado",
-      "connectDiscord": "Conectar Discord",
-      "discordLinkedHint": "Vincule o Discord para ver servidores que você pode gerenciar e sincronizar permissões.",
-      "refresh": "Atualizar sessão"
+      "connectDiscord": "Conectar Discord"
     },
     "errors": {
       "title": "Não foi possível carregar os dados",
@@ -211,7 +208,6 @@
     },
     "guilds": {
       "title": "Servidores",
-      "description": "Servidores onde você pode configurar os logs do fernn.",
       "errorTitle": "Não foi possível carregar os servidores",
       "errorDescription": "Conecte o Discord ou verifique se o bot está nos seus servidores.",
       "emptyTitle": "Nenhum servidor ainda",
@@ -222,7 +218,6 @@
     },
     "settings": {
       "title": "Configurações de logs",
-      "description": "Escolha um canal e quais categorias de eventos publicar.",
       "enabled": "Ativar logs",
       "enabledHint": "Desativado, nenhum embed de log é enviado neste servidor.",
       "channel": "Canal de logs",

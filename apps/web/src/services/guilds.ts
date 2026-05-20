@@ -35,10 +35,12 @@ export async function updateGuildSettings(
 }
 
 export async function fetchGuildChannels(
-  guildId: string
+  guildId: string,
+  kind: "text" | "voice" = "text"
 ): Promise<GuildChannel[]> {
   const res = await apiClient.get<{ channels: GuildChannel[] }>(
-    `guilds/${guildId}/channels`
+    `guilds/${guildId}/channels`,
+    { params: { kind } }
   )
   return res.data.channels
 }

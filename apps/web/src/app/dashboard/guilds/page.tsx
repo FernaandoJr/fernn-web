@@ -9,10 +9,7 @@ export default function GuildsPage() {
   const t = useTranslations()
 
   return (
-    <DashboardShell
-      title={t("dashboard.guilds.title")}
-      description={t("dashboard.guilds.description")}
-    >
+    <DashboardShell title={t("dashboard.guilds.title")}>
       <GuildList />
     </DashboardShell>
   )

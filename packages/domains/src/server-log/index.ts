@@ -66,3 +66,16 @@ export const defaultServerLogSettings = (
   enabled: false,
   events: defaultServerLogEvents(),
 });
+
+export function mergeServerLogEvents(
+  events: Partial<ServerLogEventFlags> | undefined,
+): ServerLogEventFlags {
+  const defaults = defaultServerLogEvents();
+  if (!events) return defaults;
+  return {
+    voice: events.voice ?? defaults.voice,
+    members: events.members ?? defaults.members,
+    moderation: events.moderation ?? defaults.moderation,
+    messages: events.messages ?? defaults.messages,
+  };
+}

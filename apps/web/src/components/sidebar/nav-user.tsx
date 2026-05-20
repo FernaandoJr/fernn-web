@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 import { useTranslations } from "next-intl"
 
 import { useSignOut } from "@/auth"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { UserAvatar } from "@/components/user-avatar"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,22 +22,14 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar"
 
-function initials(name: string) {
-  return name
-    .split(" ")
-    .map((p) => p[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase()
-}
-
 export function NavUser({
   user,
 }: {
   user: {
+    id: string
     name: string
     email: string
-    avatar: string
+    image?: string | null
   }
 }) {
   const { isMobile } = useSidebar()
@@ -54,12 +46,11 @@ export function NavUser({
               size="lg"
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
-              <Avatar className="size-8 rounded-lg">
-                <AvatarImage src={user.avatar} alt={user.name} />
-                <AvatarFallback className="rounded-lg">
-                  {initials(user.name)}
-                </AvatarFallback>
-              </Avatar>
+              <UserAvatar
+                userId={user.id}
+                name={user.name}
+                image={user.image}
+              />
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-medium">{user.name}</span>
                 <span className="text-muted-foreground truncate text-xs">
@@ -70,19 +61,18 @@ export function NavUser({
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            className="min-w-56 rounded-lg"
+            className="min-w-56 rounded-md"
             side={isMobile ? "bottom" : "right"}
             align="end"
             sideOffset={4}
           >
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-2 py-2 text-sm">
-                <Avatar className="size-8 rounded-lg">
-                  <AvatarImage src={user.avatar} alt={user.name} />
-                  <AvatarFallback className="rounded-lg">
-                    {initials(user.name)}
-                  </AvatarFallback>
-                </Avatar>
+                <UserAvatar
+                  userId={user.id}
+                  name={user.name}
+                  image={user.image}
+                />
                 <div className="grid text-left leading-tight">
                   <span className="truncate font-medium">{user.name}</span>
                   <span className="text-muted-foreground truncate text-xs">

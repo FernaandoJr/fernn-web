@@ -2,7 +2,7 @@ import { zValidator } from '@hono/zod-validator';
 import { Hono } from 'hono';
 import { z } from 'zod';
 import { logCategorySchema } from '@fernn/domains/server-log';
-import type { auth } from '../auth.js';
+import type { AppVariables } from '../types/session.js';
 import { SERVER_LOG_SETTINGS } from '../db/collections.js';
 import { db } from '../db/mongo.js';
 import { requireGuildManager } from '../middleware/guild-access.js';
@@ -20,16 +20,14 @@ const logsQuerySchema = z.object({
   q: z.string().optional(),
 });
 
-type SessionUser = (typeof auth.$Infer)['Session']['user'];
-
 export function createLogsRoutes() {
-  return new Hono<{ Variables: { user: SessionUser | null } }>().get(
+  return new Hono<{ Variables: AppVariables }>().get(
     '/guilds/:guildId/logs',
     zValidator('query', logsQuerySchema),
     async (c) => {
       const guildId = c.req.param('guildId');
-      const userOrResponse = await requireGuildManager(c, guildId);
-      if (userOrResponse instanceof Response) return userOrResponse;
+      const result = await requireGuildManager(c, guildId);
+      if (result instanceof Response) return result;
 
       const { cursor, limit, category, q } = c.req.valid('query');
 

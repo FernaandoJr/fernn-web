@@ -1,16 +1,9 @@
 import { Hono } from 'hono';
 import { auth } from '../auth.js';
 import { env } from '../constants/envs.js';
+import type { AppVariables } from '../types/session.js';
 
-type SessionUser = (typeof auth.$Infer)['Session']['user'];
-type SessionSession = (typeof auth.$Infer)['Session']['session'];
-
-const authRoutes = new Hono<{
-  Variables: {
-    user: SessionUser | null;
-    session: SessionSession | null;
-  };
-}>()
+const authRoutes = new Hono<{ Variables: AppVariables }>()
   .get('/auth/oauth-redirect', async (c) => {
     const session = await auth.api.getSession({ headers: c.req.raw.headers });
     const origin = env.WEB_APP_ORIGIN.replace(/\/$/, '');
