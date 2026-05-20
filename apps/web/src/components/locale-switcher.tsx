@@ -1,53 +1,90 @@
-"use client"
+"use client";
 
-import { useCallback, useTransition } from "react"
-import { useLocale } from "next-intl"
-import { useRouter } from "next/navigation"
+import { useCallback, useTransition } from "react";
+import { ChevronDown } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
-import { Button } from "@/components/ui/button"
-import { localeLabels, locales, LOCALE_COOKIE } from "@/lib/i18n/config"
-import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  localeFlagSrc,
+  localeLabels,
+  locales,
+  LOCALE_COOKIE,
+  type Locale,
+} from "@/lib/i18n/config";
+import { cn } from "@/lib/utils";
+
+function LocaleFlag({
+  locale,
+  className,
+}: {
+  locale: Locale;
+  className?: string;
+}) {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={localeFlagSrc[locale]}
+      alt=""
+      width={20}
+      height={15}
+      className={cn("h-3.5 w-5 shrink-0 rounded-[2px] object-cover", className)}
+      decoding="async"
+    />
+  );
+}
 
 export function LocaleSwitcher({ className }: { className?: string }) {
-  const locale = useLocale()
-  const router = useRouter()
-  const [isPending, startTransition] = useTransition()
+  const locale = useLocale() as Locale;
+  const router = useRouter();
+  const t = useTranslations();
+  const [isPending, startTransition] = useTransition();
 
   const setLocale = useCallback(
     (next: string) => {
-      document.cookie = `${LOCALE_COOKIE}=${next};path=/;max-age=31536000;SameSite=Lax`
+      if (next === locale) return;
+      document.cookie = `${LOCALE_COOKIE}=${next};path=/;max-age=31536000;SameSite=Lax`;
       startTransition(() => {
-        router.refresh()
-      })
+        router.refresh();
+      });
     },
-    [router]
-  )
+    [locale, router],
+  );
 
   return (
-    <div
-      className={cn(
-        "flex items-center gap-1 rounded-full border border-border/60 bg-muted/40 p-0.5",
-        className
-      )}
-      role="group"
-      aria-label="Language"
-    >
-      {locales.map((code) => (
+    <DropdownMenu modal={false}>
+      <DropdownMenuTrigger asChild>
         <Button
-          key={code}
           type="button"
+          variant="outline"
           size="sm"
-          variant={locale === code ? "default" : "ghost"}
-          className={cn(
-            "h-7 min-w-8 rounded-full px-2 text-xs",
-            locale === code && "pointer-events-none"
-          )}
           disabled={isPending}
-          onClick={() => setLocale(code)}
+          className={cn("gap-2", className)}
+          aria-label={t("a11y.selectLanguage")}
         >
-          {localeLabels[code as keyof typeof localeLabels]}
+          <LocaleFlag locale={locale} />
+          <span>{localeLabels[locale]}</span>
+          <ChevronDown className="size-4 opacity-50" />
         </Button>
-      ))}
-    </div>
-  )
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" className="min-w-36">
+        <DropdownMenuRadioGroup value={locale} onValueChange={setLocale}>
+          {locales.map((code) => (
+            <DropdownMenuRadioItem key={code} value={code}>
+              <LocaleFlag locale={code} />
+              {localeLabels[code]}
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
 }

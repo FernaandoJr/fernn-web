@@ -1,13 +1,12 @@
 "use client"
 
-import { FolderGit2 } from "lucide-react"
 import { useTranslations } from "next-intl"
 import Link from "next/link"
 import * as React from "react"
 
 import { HeaderAuthActions } from "@/components/header-auth-actions"
 import { LocaleSwitcher } from "@/components/locale-switcher"
-import { Button, buttonVariants } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
 	NavigationMenu,
 	NavigationMenuItem,
@@ -69,6 +68,7 @@ export function MobileNav({
 	nav: NavCategory[]
 	toggleSr: string
 }) {
+	const t = useTranslations()
 	const [open, setOpen] = React.useState(false)
 
 	return (
@@ -109,6 +109,12 @@ export function MobileNav({
 				alignOffset={-16}
 				sideOffset={4}>
 				<div className="flex flex-col gap-12 overflow-auto px-6 py-6">
+					<div className="flex flex-col gap-3">
+						<p className="text-sm font-medium text-muted-foreground">
+							{t("a11y.selectLanguage")}
+						</p>
+						<LocaleSwitcher className="w-full" />
+					</div>
 					{nav.map((category) => (
 						<div
 							className="flex flex-col gap-4"
@@ -184,27 +190,6 @@ export function Navbar({ nav, className }: NavbarProps) {
 				<HeaderAuthActions />
 				<LocaleSwitcher />
 				<MobileNav nav={nav} toggleSr={t("a11y.toggleMenu")} />
-				<a
-					href="https://github.com/FernaandoJr/fernn"
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label={t("a11y.github")}
-					className={cn(
-						buttonVariants({ variant: "ghost", size: "icon" }),
-						"text-accent-foreground dark:hover:bg-accent [&_svg:not([class*='size-'])]:size-6"
-					)}>
-					<FolderGit2 className="size-6" />
-				</a>
-				<Button
-					asChild
-					variant="secondary"
-					size="sm"
-					className="hidden sm:inline-flex">
-					<Link href="/terms">{t("footer.terms")}</Link>
-				</Button>
-				<Button asChild size="sm" className="hidden sm:inline-flex">
-					<Link href="/privacy">{t("footer.privacy")}</Link>
-				</Button>
 			</div>
 		</header>
 	)

@@ -23,7 +23,7 @@ export function LegalLayout({
   return (
     <>
       <SiteHeader />
-      <main className="flex-1 px-4 py-10 sm:px-6">
+      <main className="flex-1 px-4 pt-24 pb-10 sm:px-6">
         <div className="mx-auto max-w-3xl space-y-8">
           <Card className="border-border/60 shadow-sm">
             <CardHeader className="space-y-1">

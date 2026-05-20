@@ -21,8 +21,7 @@
     "toggleMenu": "Abrir ou fechar menu",
     "github": "fernn no GitHub",
     "discordInvite": "Adicionar o fernn ao seu servidor do Discord (abre o Discord em uma nova aba)",
-    "heroHeightFull": "Usar altura ajustada ao conteúdo",
-    "heroHeightFit": "Usar hero em altura total"
+    "selectLanguage": "Idioma"
   },
   "home": {
     "aboutTitle": "O que é o fernn?",
@@ -115,16 +114,12 @@
     }
   },
   "hero": {
-    "pillBadge": "fernn",
-    "pillLine": "Bot do Discord",
-    "headlineLine1": "Moderação, utilidades",
-    "headlineLine2Before": "e",
+    "headlineLine1": "Moderação e ferramentas,",
+    "headlineLine2Before": "com",
     "headlineEm": "logs do servidor",
-    "headlineLine2After": "num kit só de comandos slash",
-    "subtext": "Convide o fernn para alinhar a moderação: ajuste logs, mantenha membros informados e conte com a confiabilidade por trás do Bun.",
-    "addBotButton": "Adicionar o bot ao seu servidor",
-    "termsButton": "Termos de serviço",
-    "privacyButton": "Política de privacidade"
+    "headlineLine2After": "no Discord",
+    "subtext": "Convide o fernn e gerencie seu servidor com comandos slash.",
+    "addBotButton": "Adicionar ao servidor"
   },
   "footer": {
     "githubLabel": "fernn no GitHub",
@@ -134,8 +129,7 @@
     "privacy": "Privacidade",
     "termsFull": "Termos de serviço",
     "privacyFull": "Política de privacidade",
-    "copyright": "© Fernando Divino de Mores Júnior",
-    "tagline": "fernn — bot Discord com comandos slash (Bun, TypeScript, discord.js)."
+    "copyright": "© Fernando Divino de Mores Júnior"
   },
   "terms": {
     "metaTitle": "Termos de serviço — fernn",

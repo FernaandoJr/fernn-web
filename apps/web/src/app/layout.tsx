@@ -11,6 +11,7 @@ import { getLocale, getMessages } from "next-intl/server"
 
 import "./globals.css"
 import { QueryProvider } from "@/components/providers/query-provider"
+import { ThemeProvider } from "@/components/providers/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
 import { htmlLangAttribute } from "@/lib/i18n/server"
 import { cn } from "@/lib/utils"
@@ -62,8 +63,8 @@ export default async function RootLayout({
   return (
     <html
       lang={htmlLangAttribute(locale)}
+      suppressHydrationWarning
       className={cn(
-        "dark",
         "h-full",
         "antialiased",
         plusJakarta.variable,
@@ -76,10 +77,12 @@ export default async function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider key={locale} locale={locale} messages={messages}>
-          <QueryProvider>
-            {children}
-            <Toaster richColors position="top-center" />
-          </QueryProvider>
+          <ThemeProvider>
+            <QueryProvider>
+              {children}
+              <Toaster richColors position="top-center" />
+            </QueryProvider>
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

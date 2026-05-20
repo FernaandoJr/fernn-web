@@ -19,11 +19,7 @@ export function HeaderAuthActions() {
   }, [])
 
   if (isAuth) {
-    return (
-      <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
-        <Link href="/dashboard">{t("nav.dashboard")}</Link>
-      </Button>
-    )
+    return null
   }
 
   return (

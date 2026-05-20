@@ -38,7 +38,6 @@ export function SiteFooter({ className }: { className?: string }) {
       ]}
       copyright={{
         text: t("footer.copyright"),
-        license: t("footer.tagline"),
       }}
     />
   )

@@ -1,7 +1,7 @@
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { HomeMarketingSections } from "@/components/home-marketing-sections"
-import { HeroSection } from "@/components/ui/glass-video-hero"
+import { HeroSection } from "@/components/sections/hero"
 import { getDiscordInviteUrl } from "@/lib/discord"
 
 export default async function Home() {
